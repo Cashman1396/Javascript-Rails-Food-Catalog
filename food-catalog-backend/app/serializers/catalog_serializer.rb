@@ -1,4 +1,4 @@
 class CatalogSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :foods
 end
