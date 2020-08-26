@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #44c4eb;
+    color: #097486;
+    line-height: 18px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Raleway', serif;
+    padding: 20px;
+
+}
+
+/* Nav bar */
+ul#catalog {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid rgb(228, 201, 50);
+    height: 100%;
+
+}
+
+.catalog-nav {
+    border: 5px solid rgba(200, 221, 13, 0.836);
+    border-radius: 10px;
+    background-color: white;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+
+}
+
+.catalog-name {
+    font-size: 20px;
+    border: 1px solid rgba(225, 238, 108, 0.877);
+    border-radius: 10px;
+    background-color: rgb(103, 153, 218);
+    cursor: pointer;
+    font-family: 'Raleway', serif;
+    padding: 20px;
+}
+
+/* end catalog nav bar css */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: white;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.5%; /* 18px / 800px */
+    width: 85%;
+    align-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Food Cards */
+.food-card {
+    width: 300px;
+    color: #9C5F5F;
+    border: 2px solid #663939;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px auto 5px auto;
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+div.food-image {
+    width: 250px;
+}
+
+.name-and-cost {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.food-description {
+    padding-top: 15px;
+    text-align: left;
+}
+
+#create-catalog-food-form {
+    display: none;
+}
+
+/* .delete-item {
+    position: relative;
+    top: 10px;
+    right: 75px;
+    border-radius: 10px;
+}
+*/
+
+#submit-form {
+    border-radius: 10px;
+}
