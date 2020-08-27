@@ -8,6 +8,14 @@ class FoodsAdapter {
     }
 
     postFoods(data) {
-      return fetch(this.baseURL, {method: "POST", headers: {"Content-Type": "application/json" }, body: JSON.stringify(data) }).then(resp => resp.json()).catch(err => alert(err))
+        return fetch(this.baseURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .catch(err => alert(err))
     }
 }

@@ -117,19 +117,18 @@ class Catalog {
         e.preventDefault()
         const catalogNameSelect = document.querySelector("#catalog-select").value
         const foodName = document.querySelector("#food-name").value
-        const foodCost = document.querySelector("cost").value
-        const foodDescription = document.querySelector("#description").value
+        const foodCost = document.querySelector("#cost").value
         const foodImage = document.querySelector("#image-url").value
+        const foodDescription = document.querySelector("#description").value
         const data = {
             name: foodName,
             cost: foodCost,
-            description: foodDescription,
             image_url: foodImage,
+            description: foodDescription,
             catalog_id: catalogNameSelect
-
         }
         this.foodsAdapter.postFoods(data).then(data => {
-            alert("Food was Created!")
+            alert("Food Created!")
             this.form.reset()
             this.clearPage()
             this.renderAllFoods()
