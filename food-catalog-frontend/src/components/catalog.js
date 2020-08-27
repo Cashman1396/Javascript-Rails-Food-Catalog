@@ -31,14 +31,14 @@ class Catalog {
                         this.renderAddCatalogFoodForm()
                         break
                     default:
-                        this.clearPage
+                        this.clearPage()
                         this.renderAllFoods()
                 }
             })
         })
     }
 
-    clearPage() {
+    clearPage(){
         const clearFoods = document.querySelectorAll(".food-card")
         Array.from(clearFoods).forEach(food => {
             food.remove()
@@ -82,13 +82,13 @@ class Catalog {
         })
     }
 
-    renderAllFoods() {
+    renderAllFoods(){
         const allFoods = []
         this.foodsAdapter.getFoods().then(foods => {
             foods.forEach(food => {
                 const foodObj = new Food(food.attributes.name, food.attributes.cost, food.attributes.description, food.attributes.image_url, food.id, food.attributes.catalog.id, food.attributes.catalog.name)
                 allFoods.push(foodObj)
-            });
+            })
             const sortedAllFoods = allFoods.sort((a,b) => a.name.localeCompare(b.name))
             sortedAllFoods.forEach(food => food.createFoodCard())
         })
@@ -97,7 +97,7 @@ class Catalog {
     renderAddCatalogFoodForm(){
         this.form.style.display = "block"
         this.form.style.margin = "0 auto"
-        this.form.addEventListener("submit", (e) => this.addNewCatalogFood(e))
+        this.form.addEventListener("submit", (e) => this.addNewCatalogFood(e)) 
     }
 
     populateCatalogNameToForm() {
@@ -117,7 +117,7 @@ class Catalog {
         e.preventDefault()
         const catalogNameSelect = document.querySelector("#catalog-select").value
         const foodName = document.querySelector("#food-name").value
-        const foodCost = document.querySelector("#cost").value
+        const foodCost = document.querySelector("cost").value
         const foodDescription = document.querySelector("#description").value
         const foodImage = document.querySelector("#image-url").value
         const data = {
@@ -126,9 +126,10 @@ class Catalog {
             description: foodDescription,
             image_url: foodImage,
             catalog_id: catalogNameSelect
+
         }
         this.foodsAdapter.postFoods(data).then(data => {
-            alert("Food Created!")
+            alert("Food was Created!")
             this.form.reset()
             this.clearPage()
             this.renderAllFoods()
@@ -136,5 +137,5 @@ class Catalog {
     }
 
 
-    
+
 }
