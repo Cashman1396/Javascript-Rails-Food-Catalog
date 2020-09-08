@@ -81,7 +81,8 @@ class Catalog {
             sortedDrinksFoods.forEach(food => food.createFoodCard())
         })
     }
-
+    
+    //Renders All foods but returns a promise
     renderAllFoods(){
         const allFoods = []
         this.foodsAdapter.getFoods().then(foods => {
@@ -128,7 +129,7 @@ class Catalog {
             catalog_id: catalogNameSelect
         }
         this.foodsAdapter.postFoods(data).then(data => {
-            alert("Food Created!")
+            alert("Food wasCreated!")
             this.form.reset()
             this.clearPage()
             this.renderAllFoods()

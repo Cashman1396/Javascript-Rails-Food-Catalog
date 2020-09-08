@@ -59,6 +59,12 @@ entrees.foods.create([
     image_url: "assets/images/sourcreamonion.jpg"
   },
   {
+    name: "Banana Parfait",
+    cost: 2.56,
+    description: "Banana",
+    image_url: "assets/images/banana-parfait.jpg"
+  },
+  {
     name: "Fluffy Eevee Pancakes",
     cost: 1.00,
     description: "Bouncy pancakes that look like eevee",

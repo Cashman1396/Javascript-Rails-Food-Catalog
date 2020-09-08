@@ -3,9 +3,12 @@ class FoodsAdapter {
       this.baseURL = "http://localhost:3000/foods"
     }
   
+    // GET FETCH
     getFoods() {
       return fetch(this.baseURL).then(resp => resp.json()).then(json => (json.data))
     }
+
+    //POST FETCH
 
     postFoods(data) {
         return fetch(this.baseURL, {
