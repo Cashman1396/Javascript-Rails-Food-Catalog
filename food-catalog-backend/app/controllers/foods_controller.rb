@@ -6,13 +6,13 @@ class FoodsController < ApplicationController
 
     def show
         food = Food.find_by(id: params[:id])
-        render json: FoodSerializer.new(food).serializable_json
+        render json: FoodSerializer.new(food)
     end 
 
     def create
         food = Food.new(food_params)
         if food.save
-            render json: FoodSerializer.new(food).serializable_json
+            render json: FoodSerializer.new(food)
         end 
     end 
 

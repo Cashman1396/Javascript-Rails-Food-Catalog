@@ -1,3 +1,4 @@
+// runs majority of the code for the program
 class Catalog {
     constructor(name){
         this.name = name
@@ -37,7 +38,8 @@ class Catalog {
             })
         })
     }
-
+    
+    //erases food from page 
     clearPage(){
         const clearFoods = document.querySelectorAll(".food-card")
         Array.from(clearFoods).forEach(food => {
@@ -46,6 +48,7 @@ class Catalog {
         this.form.style.display = "none"
     }
 
+    // renders entrees 
     renderEntreesFoods() {
         const entreesFoods = []
         this.catalogsAdapter.getCatalogs().then(catalogs => {
@@ -128,11 +131,13 @@ class Catalog {
             description: foodDescription,
             catalog_id: catalogNameSelect
         }
-        this.foodsAdapter.postFoods(data).then(data => {
-            alert("Food wasCreated!")
+        this.foodsAdapter.postFoods(data).then(food => {
+            alert("CatalogDex Updated!")
             this.form.reset()
             this.clearPage()
-            this.renderAllFoods()
+            new Food(food.attributes.name, food.attributes.cost, food.attributes.description, food.attributes.image_url, food.id, food.attributes.catalog.id, food.attributes.catalog.name)
+            Food.allFoods.forEach(food => food.createFoodCard())
+           // this.renderAllFoods()
         })
     }
 

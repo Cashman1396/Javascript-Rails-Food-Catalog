@@ -8,6 +8,8 @@ class Food {
         this.catalog_id = catalog_id
         this.catalog_name = catalog_name
         this.foodsAdapter = new FoodsAdapter()
+        Food.allFoods.push(this)
+
     }
 
     createFoodCard(){
@@ -47,6 +49,10 @@ class Food {
         container.append(foodCard)
 
     }
+
+    static allFoods = []
+    
+    
 }
 
 
